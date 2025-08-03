@@ -26,10 +26,7 @@ public class UserRepository : IUserRepository
     {
         var user = await Maincontext.Users.FirstOrDefaultAsync(u => u.UserId == userId);
 
-        if (user == null)
-        {
-            return user;
-        } 
+
 
         return user;
     }
