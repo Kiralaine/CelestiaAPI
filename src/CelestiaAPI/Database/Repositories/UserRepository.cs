@@ -1,4 +1,5 @@
 using CelestiaAPI.Feature.UserFeature;
+using Microsoft.EntityFrameworkCore;
 namespace CelestiaAPI.Database.Repositories;
 
 public class UserRepository : IUserRepository
@@ -15,9 +16,10 @@ public class UserRepository : IUserRepository
         return user.UserID;
     }
 
-    public Task<ICollection<User>> SelectAllAsync()
+    public async  Task<ICollection<User>> SelectAllAsync()
     {
-        throw new NotImplementedException();
+        var users = await Maincontext.Users.ToListAsync();
+        return users;
     }
 
     public Task<User?> SelectByIdAsync(long userId)
