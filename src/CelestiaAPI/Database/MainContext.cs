@@ -7,6 +7,7 @@ namespace CelestiaAPI.Database;
 public class MainContext : DbContext
 {
     public DbSet<User> Users { get; set; }
+    
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public MainContext(DbContextOptions<MainContext> options) : base(options)
     {

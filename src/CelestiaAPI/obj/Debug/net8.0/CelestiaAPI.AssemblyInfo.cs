@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CelestiaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb88f2b1eeffdf4d1ce4d0bf781163f6157a5d0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4aa47441dc7dd32d5fceca9be1f72ba6f20b7e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CelestiaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CelestiaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,10 +3,16 @@ namespace CelestiaAPI.Database.Repositories;
 
 public class UserRepository : IUserRepository
 {
-
-    public Task<long> InsertAsync(User user)
+    private readonly MainContext Maincontext;
+    public UserRepository(MainContext context)
     {
-        throw new NotImplementedException();
+        Maincontext = context;
+    }
+    public async  Task<long> InsertAsync(User user)
+    {
+        await Maincontext.Users.AddAsync(user);
+        await Maincontext.SaveChangesAsync();
+        return user.UserID;
     }
 
     public Task<ICollection<User>> SelectAllAsync()

@@ -13,7 +13,7 @@ public class User
     public UserRole Role { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? DeletedAt { get; set; }
-    public bool Banned { get; set; } = false;
+    public bool Banned { get; set; }
     public ICollection<RefreshToken> RefreshTokens { get; set; }
     
 }
