@@ -37,9 +37,12 @@ public class UserRepository : IUserRepository
         return user;
     }
 
-    public Task<User?> SelectUserByUserEmailAsync(string email)
+    public async Task<User?> SelectUserByUserEmailAsync(string email)
     {
-        throw new NotImplementedException();
+        var user = await Maincontext.Users
+            .FirstOrDefaultAsync(u => u.Email == email);
+
+        return user;
     }
 
     public Task<bool> CheckUserExistance(long userId)
