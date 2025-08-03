@@ -22,9 +22,16 @@ public class UserRepository : IUserRepository
         return users;
     }
 
-    public Task<User?> SelectByIdAsync(long userId)
+    public  async Task<User?> SelectByIdAsync(long userId)
     {
-        throw new NotImplementedException();
+        var user = await Maincontext.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+
+        if (user == null)
+        {
+            return user;
+        } 
+
+        return user;
     }
 
     public Task<User?> SelectUserByUserNameAsync(string userName)
