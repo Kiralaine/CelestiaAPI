@@ -45,9 +45,9 @@ public class UserRepository : IUserRepository
         return user;
     }
 
-    public Task<bool> CheckUserExistance(long userId)
+    public async Task<bool> CheckUserExistance(long userId)
     {
-        throw new NotImplementedException();
+        return await Maincontext.Users.AnyAsync(x => x.UserID == userId);
     }
 
     public Task DeleteAsync(User user)
