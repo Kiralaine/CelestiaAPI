@@ -24,16 +24,17 @@ public class UserRepository : IUserRepository
 
     public  async Task<User?> SelectByIdAsync(long userId)
     {
-        var user = await Maincontext.Users.FirstOrDefaultAsync(u => u.UserId == userId);
-
-
-
+        var user = await Maincontext.Users.FirstOrDefaultAsync(u => u.UserID == userId);
+        
         return user;
     }
 
-    public Task<User?> SelectUserByUserNameAsync(string userName)
+    public async  Task<User?> SelectUserByUserNameAsync(string userName)
     {
-        throw new NotImplementedException();
+        var user = await Maincontext.Users
+            .FirstOrDefaultAsync(u => u.UserName == userName);
+
+        return user;
     }
 
     public Task<User?> SelectUserByUserEmailAsync(string email)
